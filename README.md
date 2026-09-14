@@ -8,6 +8,12 @@ Módulo Programación Servicios y Procesos
 
 ## 📑 Índice de proyectos
 
+### 🔹 UT1: **introduccionJava**
+- **Descripción:** Introducción a los fundamentos de Java.  
+- **Ejemplos incluidos:**  
+  - Hello World 
+- **Conceptos clave:** sintaxis básica, herencia, colecciones, excepciones.
+
 
 ## 🚀 Cómo ejecutar los proyectos
 1. Clona este repositorio:
