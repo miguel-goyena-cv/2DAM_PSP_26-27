@@ -16,26 +16,35 @@ public class Calculadora {
         // Creamos un objeto Scanner para leer desde consola
         Scanner scanner = new Scanner(System.in);
 
-        // Preparamos el bucle para repetir la operación
-        boolean continuar = true;
-        while (continuar) {
+        try {
+			// Preparamos el bucle para repetir la operación
+			boolean continuar = true;
+			while (continuar) {
 
-            // Dependiendo del modo, llamamos a una función u otra
-            if (modo == 1) {
-                calculadoraEnteros(scanner);
-            } else {
-                calculadoraReales(scanner);
-            }
+			    // Dependiendo del modo, llamamos a una función u otra
+			    if (modo == MODE_ENTERO) {
+			        calculadoraEnteros(scanner);
+			    } else {
+			        calculadoraReales(scanner);
+			    }
 
-            // Pregunto si quiero otra operacion
-            System.out.print("Quiere realizar otra operación (S/n): ");
-            String respuesta = scanner.nextLine();
-            continuar = (respuesta.equalsIgnoreCase("s"));
-            
+			    // Pregunto si quiero otra operacion
+			    System.out.print("Quiere realizar otra operación (S/n): ");
+			    String respuesta = scanner.nextLine();
+			    continuar = (respuesta.equalsIgnoreCase("s"));
+			    
+			}
+		} catch (Exception e) {
+			// Acciones a realizar debido a un error
+			System.out.print("Ha habido un error en la ejecución: "+e.getMessage());
+			e.printStackTrace(); //¿Nos interesa que lo vea el usuario?
+		}
+        finally {
+            // Cerramos el scanner, Siempre se va a ejecutar
+            scanner.close();
         }
 
-        // Cerramos el scanner, OJO que no se nos olvide
-        scanner.close();
+
         
     }
 
@@ -86,6 +95,14 @@ public class Calculadora {
         int num2 = Integer.parseInt(scanner.nextLine());
         System.out.print("Introduce la operación (+, -, *, /): ");
         String operacion = scanner.nextLine();
+        
+        String respuesta = scanner.nextLine();
+
+        System.out.println("Hola: "+respuesta);
+
+        respuesta = scanner.nextLine();
+
+        System.out.println("Adios: "+respuesta);
 
         realizarOperacionYPintarResultado(num1, num2, operacion, MODE_ENTERO);
 
